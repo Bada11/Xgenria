@@ -47,7 +47,7 @@ const index = () => {
     if (register) {
       router.push("/login");
     }
-  }, []);
+  });
 
   return (
     <div className="gradient-bg h-full xl:px-20 text-white pt-2 w-full min-h-[100vh] ">
