@@ -14,6 +14,9 @@ export default async function handler(req, res) {
 
       //const hashedPassword = await bcrypt.hash(userpassword, 12);
 
+      const UserExists = await Register.findOne({email: email})
+
+      if(!userExists) {
       const register = await Register.create({
         name,
         userpassword,
@@ -21,6 +24,7 @@ export default async function handler(req, res) {
       });
 
       console.log(register);
+      }
 
       return res.status(201).json(register);
     }
